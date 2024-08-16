@@ -33,7 +33,7 @@ resource "aws_lb_target_group_attachment" "attachment" {
 
 resource "aws_lb_target_group_attachment" "attachment1" {
   target_group_arn = aws_lb_target_group.target-elb.arn
-  target_id        = aws_spot_instance_request.ansible-instance.id
+  target_id        = aws_spot_instance_request.jenkins-instance.id
   port             = 80
 
   depends_on = [
