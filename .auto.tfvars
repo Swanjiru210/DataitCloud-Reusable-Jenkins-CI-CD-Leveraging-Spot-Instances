@@ -9,4 +9,4 @@ private_subnet_2_cidr = "10.0.12.0/24"
 private_subnet_3_cidr = "10.0.13.0/24"
 instance_type = "t2.medium"
 instance_ami = "ami-0c6b1d09930fac512"
-keyname = "pipeline"    # key pair     or pem key ( ssh) 
+keyname = "Jenkins"    # key pair     or pem key ( ssh) 
