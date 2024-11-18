@@ -19,7 +19,7 @@ data "aws_ami" "ubuntu_server" {
 resource "aws_spot_instance_request" "ansible-host-instance" {
   ami             = data.aws_ami.ubuntu_server.id
   instance_type   = "t2.small"
-  spot_price      = "0.0089"
+  spot_price      = "0.07"
   key_name        = var.keyname
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id          = aws_subnet.public-subnet-1.id
@@ -35,7 +35,7 @@ resource "aws_spot_instance_request" "ansible-host-instance" {
 resource "aws_spot_instance_request" "jenkins-instance" {
   ami             = data.aws_ami.ubuntu_server.id
   instance_type   = "t2.small"
-  spot_price      = "0.0089"
+  spot_price      = "0.07"
   key_name        = var.keyname
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id          = aws_subnet.public-subnet-1.id
@@ -49,7 +49,7 @@ resource "aws_spot_instance_request" "jenkins-instance" {
 resource "aws_spot_instance_request" "sonarqube-instance" {
   ami             = data.aws_ami.ubuntu_server.id
   instance_type   = "t2.small"
-  spot_price      = "0.0089"
+  spot_price      = "0.07"
   key_name        = var.keyname
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id          = aws_subnet.public-subnet-1.id
@@ -62,7 +62,7 @@ resource "aws_spot_instance_request" "sonarqube-instance" {
 resource "aws_spot_instance_request" "jenkins-agent-2" {
   ami             = data.aws_ami.ubuntu_server.id
   instance_type   = "t2.small"
-  spot_price      = "0.0089"
+  spot_price      = "0.07"
   key_name        = var.keyname
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id          = aws_subnet.public-subnet-1.id
@@ -76,7 +76,7 @@ resource "aws_spot_instance_request" "jenkins-agent-2" {
 resource "aws_spot_instance_request" "grafana-instance" {
   ami             = data.aws_ami.ubuntu_server.id
   instance_type   = "t2.small"
-  spot_price      = "0.0089"
+  spot_price      = "0.07"
   key_name        = var.keyname
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id          = aws_subnet.public-subnet-1.id
@@ -90,7 +90,7 @@ resource "aws_spot_instance_request" "grafana-instance" {
 resource "aws_spot_instance_request" "jenkins-agent-1" {
   ami             = data.aws_ami.ubuntu_server.id
   instance_type   = "t2.small"
-  spot_price      = "0.0089"
+  spot_price      = "0.07"
   key_name        = var.keyname
   vpc_security_group_ids = [aws_security_group.sg_allow_ssh_jenkins.id]
   subnet_id          = aws_subnet.public-subnet-1.id
