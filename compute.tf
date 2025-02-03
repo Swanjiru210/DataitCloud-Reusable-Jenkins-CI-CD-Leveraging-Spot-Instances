@@ -20,7 +20,7 @@ data "aws_ami" "ubuntu_server" {
 
 resource "aws_instance" "ansible-instance" {
   ami             = "${data.aws_ami.ubuntu_server.id}"
-  instance_type   = "t2.small"
+  instance_type   = "t2.micro"
   key_name        = "${var.keyname}"
   vpc_security_group_ids = ["${aws_security_group.sg_allow_ssh_jenkins.id}"]
   subnet_id          = "${aws_subnet.public-subnet-1.id}"
@@ -36,7 +36,7 @@ resource "aws_instance" "ansible-instance" {
 
 resource "aws_instance" "jenkins-instance" {
   ami             = "${data.aws_ami.ubuntu_server.id}"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "${var.keyname}"
   vpc_security_group_ids = ["${aws_security_group.sg_allow_ssh_jenkins.id}"]
   subnet_id          = "${aws_subnet.public-subnet-1.id}"
@@ -50,7 +50,7 @@ resource "aws_instance" "jenkins-instance" {
 
 resource "aws_instance" "sonarqube-instance" {
   ami             = "${data.aws_ami.ubuntu_server.id}"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "${var.keyname}"
   vpc_security_group_ids = ["${aws_security_group.sg_allow_ssh_jenkins.id}"]
   subnet_id          = "${aws_subnet.public-subnet-1.id}"
@@ -64,7 +64,7 @@ resource "aws_instance" "sonarqube-instance" {
 
 resource "aws_instance" "prometheus-instance" {
   ami             = "${data.aws_ami.ubuntu_server.id}"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "${var.keyname}"
   vpc_security_group_ids = ["${aws_security_group.sg_allow_ssh_jenkins.id}"]
   subnet_id          = "${aws_subnet.public-subnet-1.id}"
@@ -78,7 +78,7 @@ resource "aws_instance" "prometheus-instance" {
 
 resource "aws_instance" "grafana-instance" {
   ami             = "${data.aws_ami.ubuntu_server.id}"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "${var.keyname}"
   vpc_security_group_ids = ["${aws_security_group.sg_allow_ssh_jenkins.id}"]
   subnet_id          = "${aws_subnet.public-subnet-1.id}"
@@ -92,7 +92,7 @@ resource "aws_instance" "grafana-instance" {
 
 resource "aws_instance" "jenkins-agent-1" {
   ami             = "${data.aws_ami.ubuntu_server.id}"
-  instance_type   = "t2.medium"
+  instance_type   = "t2.micro"
   key_name        = "${var.keyname}"
   vpc_security_group_ids = ["${aws_security_group.sg_allow_ssh_jenkins.id}"]
   subnet_id          = "${aws_subnet.public-subnet-1.id}"
